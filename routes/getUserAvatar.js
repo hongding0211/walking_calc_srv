@@ -9,7 +9,10 @@ router.get('/', async (req, res) => {
     const db = new DataBase()
     const dbRes = await db.find('users', { uid }, { projections: { img: 1 } })
     const img = dbRes.length > 0 ? dbRes[0].img : ''
-    res.send(img)
+    const result = dbRes.length > 0 ? 'ok' : 'user not exists'
+    res.send(new ResponseData({
+        img
+    }, result))
 })
 
 module.exports = router;
