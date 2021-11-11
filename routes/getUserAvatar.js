@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const ResponseData = require('./ResponseData');
-const DataBase = require('../db/db')
+const ResponseData = require('../module/ResponseData');
+const DataBase = require('../module/db')
 
 /* Get user avatar */
 router.get('/', async (req, res) => {
