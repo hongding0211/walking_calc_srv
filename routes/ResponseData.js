@@ -1,7 +1,9 @@
 class ResponseData {
     static responseCode = {
         'ok': 200,
-        'fail': 400
+        'fail': 4000,
+        'already exists': 4001,
+        'user not exists': 4002
     }
 
     constructor(data, result = 'fail') {

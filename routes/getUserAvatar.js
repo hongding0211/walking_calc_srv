@@ -3,17 +3,13 @@ var router = express.Router();
 const ResponseData = require('./ResponseData');
 const DataBase = require('../db/db')
 
-/* Login */
+/* Get user avatar */
 router.get('/', async (req, res) => {
     const { uid } = req.query
     const db = new DataBase()
-    const dbRes = await db.find('users', { uid })
-    const result = dbRes.length > 0 ? 'ok' : 'user not exists'
-    const name = dbRes.length > 0 ? dbRes[0].name : 'N/A'
-    res.send(new ResponseData({
-        uid,
-        name
-    }, result))
+    const dbRes = await db.find('users', { uid }, { projections: { img: 1 } })
+    const img = dbRes.length > 0 ? dbRes[0].img : ''
+    res.send(img)
 })
 
 module.exports = router;
