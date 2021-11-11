@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
             }
             const imgBase64 = imgFile2Base64(img)
             // find first, if not exists, then insert
-            if (await (await db.find('users', { uid: fields.uid })).length == 0) {
+            if ((await db.find('users', { uid: fields.uid })).length == 0) {
                 await db.insert('users', [{
                     ...fields,
                     img: imgBase64
