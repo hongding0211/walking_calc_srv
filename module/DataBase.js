@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient
 
 class DataBase {
-    static connectionStr = 'mongodb://root:keith205@me.hong97.ltd:27017'
+    static connectionStr = 'mongodb://localhost'
     static dbName = 'walking_calc'
 
     constructor() {
@@ -34,6 +34,38 @@ class DataBase {
             const c = database.collection(collection)
 
             res = await c.insertMany(docs, options)
+        } finally {
+            await this.client.close()
+            return res
+        }
+    }
+
+    async updateOne(collection, filter, updateDoc, options = {}) {
+        let res = null
+
+        try {
+            await this.client.connect()
+
+            const database = this.client.db(DataBase.dbName)
+            const c = database.collection(collection)
+
+            res = await c.updateOne(filter, updateDoc, options)
+        } finally {
+            await this.client.close()
+            return res
+        }
+    }
+
+    async delete(collection, query) {
+        let res = null
+
+        try {
+            await this.client.connect()
+
+            const database = this.client.db(DataBase.dbName)
+            const c = database.collection(collection)
+
+            res = await c.deleteMany(query)
         } finally {
             await this.client.close()
             return res

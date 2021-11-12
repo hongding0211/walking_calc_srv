@@ -3,16 +3,23 @@ var router = express.Router();
 const ResponseData = require('../module/ResponseData');
 const DataBase = require('../module/DataBase')
 
-/* Get user avatar */
+/*  */
 router.get('/', async (req, res) => {
-    const { uid } = req.query
+    const { uid, groupID } = req.query
     const db = new DataBase()
-    const dbRes = await db.find('users', { uid }, { projection: { img: 1 } })
-    const img = dbRes.length > 0 ? dbRes[0].img : ''
-    const result = dbRes.length > 0 ? 'ok' : 'user not exists'
+
+    // find records whose creator
+    let groups = await db.find('groups', {
+        $or: [
+            { creator: uid },
+            { members: { $elemMatch: { $eq: uid } } },
+            { groupID }
+        ]
+    })
+
     res.send(new ResponseData({
-        img
-    }, result))
+        groups
+    }, 'ok'))
 })
 
 module.exports = router;

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const ResponseData = require('../module/ResponseData');
-const DataBase = require('../module/db')
+const DataBase = require('../module/DataBase')
 
 /* Login */
 router.get('/', async (req, res) => {

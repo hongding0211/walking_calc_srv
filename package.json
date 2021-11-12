@@ -16,6 +16,10 @@
     "jade": "~1.11.0",
     "mongodb": "^4.1.4",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "sha.js": "^2.4.11"
+  },
+  "devDependencies": {
+    "@types/sha.js": "^2.4.0"
   }
 }

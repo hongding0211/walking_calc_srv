@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const ResponseData = require('../module/ResponseData');
 const formidable = require('formidable')
-const DataBase = require('../module/db')
+const DataBase = require('../module/DataBase')
 const fs = require('fs')
 const images = require('images')
 /* Register */
@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
                 const img = files.avatar
                 imgSize = (img.size / 1024).toFixed(2)
                 // size limit
-                if (imgSize > 4096 * 1024) {
+                if (imgSize > 1024) {
                     result = 'image size lager than 4mb'
                 } else {
                     const imgBase64 = imgFile2Base64(img)

@@ -1,16 +1,20 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var bodyParser = require('body-parser')
-var indexRouter = require('./routes/index');
-var login = require('./routes/login');
-var register = require('./routes/register')
-var getUserAvatar = require('./routes/getUserAvatar')
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const bodyParser = require('body-parser')
+const indexRouter = require('./routes/index');
+const login = require('./routes/login');
+const register = require('./routes/register')
+const getUserAvatar = require('./routes/getUserAvatar')
+const createGroup = require('./routes/createGroup')
+const joinGroup = require('./routes/joinGroup')
+const getGroups = require('./routes/getData')
+const addRecord = require('./routes/addRecord')
+const dissmissGroup = require('./routes/dismissGroup')
 
-var app = express();
-
+const app = express();
 
 // CORS
 app.all('*', function (req, res, next) {
@@ -38,6 +42,11 @@ app.use('/', indexRouter);
 app.use('/login', login);
 app.use('/register', register)
 app.use('/getUserAvatar', getUserAvatar)
+app.use('/createGroup', createGroup)
+app.use('/joinGroup', joinGroup)
+app.use('/getGroups', getGroups)
+app.use('/addRecord', addRecord)
+app.use('/dissmissGroup', dissmissGroup)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
