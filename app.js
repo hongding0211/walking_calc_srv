@@ -5,14 +5,16 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser')
 const indexRouter = require('./routes/index');
-const login = require('./routes/login');
-const register = require('./routes/register')
-const getUserAvatar = require('./routes/getUserAvatar')
-const createGroup = require('./routes/createGroup')
-const joinGroup = require('./routes/joinGroup')
-const getGroups = require('./routes/getData')
-const addRecord = require('./routes/addRecord')
-const dissmissGroup = require('./routes/dismissGroup')
+const login = require('./routes/Login');
+const register = require('./routes/Register')
+const getUserAvatar = require('./routes/GetUserAvatar')
+const createGroup = require('./routes/CreateGroup')
+const joinGroup = require('./routes/JoinGroup')
+const getGroups = require('./routes/GetData')
+const addRecord = require('./routes/AddRecord')
+const dissmissGroup = require('./routes/DismissGroup')
+const deleteRecord = require('./routes/DeleteRecord')
+const modifyRecord = require('./routes/ModifyRecord')
 
 const app = express();
 
@@ -47,6 +49,8 @@ app.use('/joinGroup', joinGroup)
 app.use('/getGroups', getGroups)
 app.use('/addRecord', addRecord)
 app.use('/dissmissGroup', dissmissGroup)
+app.use('/deleteRecord', deleteRecord)
+app.use('/modifyRecord', modifyRecord)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

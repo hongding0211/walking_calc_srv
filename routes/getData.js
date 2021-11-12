@@ -3,7 +3,7 @@ var router = express.Router();
 const ResponseData = require('../module/ResponseData');
 const DataBase = require('../module/DataBase')
 
-/*  */
+/* Get data */
 router.get('/', async (req, res) => {
     const { uid, groupID } = req.query
     const db = new DataBase()

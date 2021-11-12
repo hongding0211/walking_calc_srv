@@ -4,7 +4,7 @@ const ResponseData = require('../module/ResponseData');
 const DataBase = require('../module/DataBase');
 const { dbName } = require('../module/DataBase');
 
-/*  */
+/* Dismiss a group  */
 router.get('/', async (req, res) => {
     const { uid, groupID } = req.query
 

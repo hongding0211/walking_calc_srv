@@ -11,7 +11,8 @@ class ResponseData {
         'some of the members are not in the group': 4007,
         'you cannot pay to yourself': 4008,
         'who you are paying for?': 4009,
-        'only creator can dissmiss the group': 4010
+        'only creator can dissmiss the group': 4010,
+        'record not exists': 4011
     }
 
     constructor(data, result = 'fail') {
