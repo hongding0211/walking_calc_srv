@@ -6,12 +6,20 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "formidable": "^2.0.1",
     "http-errors": "~1.6.3",
+    "images": "^3.2.3",
     "jade": "~1.11.0",
+    "mongodb": "^4.1.4",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "sha.js": "^2.4.11"
+  },
+  "devDependencies": {
+    "@types/sha.js": "^2.4.0"
   }
 }
