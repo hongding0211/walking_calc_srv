@@ -7,7 +7,7 @@ const DataBase = require('../module/DataBase');
 router.get('/', async (req, res) => {
     const db = new DataBase()
 
-    let { groupID, recordID, who, paid, type, ...forWhom } = req.query
+    let {groupID, recordID, who, paid, type, typeText, ...forWhom} = req.query
     forWhom = Object.values(forWhom)
 
     let result = 'fail'
@@ -22,6 +22,7 @@ router.get('/', async (req, res) => {
         $set: {
             "records.$.paid": paid,
             "records.$.type": type,
+            "records.$.typeText": typeText,
             "records.$.forWhom": forWhom,
             'records.$.latestModified': time
         }
@@ -39,6 +40,7 @@ router.get('/', async (req, res) => {
         who,
         paid,
         type,
+        typeText,
         forWhom,
         latestModified: time
     }, result))
