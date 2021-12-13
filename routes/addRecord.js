@@ -6,7 +6,7 @@ const SHAjs = require('sha.js')
 
 /* Add a record */
 router.get('/', async (req, res) => {
-    let { groupID, who, paid, type, ...forWhom } = req.query
+    let { groupID, who, paid, type, typeText, ...forWhom } = req.query
     forWhom = Object.values(forWhom)
 
     const db = new DataBase()
@@ -40,6 +40,7 @@ router.get('/', async (req, res) => {
                     who,
                     paid,
                     type,
+                    typeText,
                     forWhom
                 }
             }
@@ -53,6 +54,7 @@ router.get('/', async (req, res) => {
         who,
         paid,
         type,
+        typeText,
         forWhom
     }, result))
 })
