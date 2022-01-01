@@ -35,7 +35,9 @@ mpm start
 {
     "code": 200,
     "result": "ok",
-    "data": { ... }
+    "data": { 
+        ...
+     }
 }
 ```
 
