@@ -16,7 +16,7 @@
 ```js
 class DataBase {
   static connectionStr = 'mongodb://localhost'
-	static dbName = 'walking_calc'		// 需要自己创建数据库
+  static dbName = 'walking_calc'		// 需要自己创建数据库
   ...
 }
 ```
@@ -41,7 +41,7 @@ mpm start
 
 ### `post` /register
 
-> Body 参数 (multipart/form-data)
+Body 参数 (multipart/form-data)
 
 | 参数名 | 必填 | 备注   |
 | ------ | ---- | ------ |
