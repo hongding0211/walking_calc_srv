@@ -104,7 +104,7 @@ Body 参数 (multipart/form-data)
 | type       | ✅    | 账单类别 emoji 图标      |
 | typeText   | ✅    | 账单类别字符串           |
 | forWhom1   | ✅    | 必须要有一个被支付的对象 |
-| forWhom... |      | string                   |
+| forWhom... | ❌     | string                   |
 
 ### `get` /modifyRecord
 
