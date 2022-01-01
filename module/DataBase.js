@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient
 
 class DataBase {
-    static connectionStr = 'mongodb://root:keith205@mongo:27017'
+    static connectionStr = 'mongodb://localhost'
     static dbName = 'walking_calc'
 
     constructor() {
