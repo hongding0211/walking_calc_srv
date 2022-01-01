@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const ResponseData = require('../module/ResponseData');
+const ResponseData = require('../module/responseData');
 const formidable = require('formidable')
-const DataBase = require('../module/DataBase')
+const DataBase = require('../module/dataBase')
 const fs = require('fs')
 const images = require('images')
 /* Register */

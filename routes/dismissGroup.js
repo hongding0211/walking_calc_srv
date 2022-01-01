@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const ResponseData = require('../module/ResponseData');
-const DataBase = require('../module/DataBase');
-const { dbName } = require('../module/DataBase');
+const ResponseData = require('../module/responseData');
+const DataBase = require('../module/dataBase');
+const { dbName } = require('../module/dataBase');
 
 /* Dismiss a group  */
 router.get('/', async (req, res) => {
