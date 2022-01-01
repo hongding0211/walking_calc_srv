@@ -7,15 +7,14 @@ const { dbName } = require('../module/DataBase');
 /* Delete Records */
 router.get('/', async (req, res) => {
     const db = new DataBase()
-    const { groupID, uid, recordID } = req.query
+    const { groupID, recordID } = req.query
     let result = 'fail'
     let dbResult = await db.updateOne('groups', {
         groupID
     }, {
         $pull: {
             records: {
-                recordID,
-                who: uid
+                recordID
             }
         }
     })
@@ -27,7 +26,6 @@ router.get('/', async (req, res) => {
     }
     res.send(new ResponseData({
         groupID,
-        uid,
         recordID
     }, result))
 })

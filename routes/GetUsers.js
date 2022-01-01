@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
         dbRes = await db.find('users', {
             $or: [
                 { uid: { $regex: `.*${keyword}.*` } },
-                { name: { $regex: `.*${keyword}.*` } },
+                { name: { $regex: new RegExp(`.*${keyword}.*`, 'i') } },
             ]
         })
     else
