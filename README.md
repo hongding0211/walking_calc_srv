@@ -6,7 +6,8 @@
 
 ## ⛏ 技术栈
 
-- Node.js + Express
+- Node.js 14 (16版本有一个库不兼容)
+- Express
 - MongoDB
 
 ## 🌟 Run & Build
@@ -21,10 +22,36 @@ class DataBase {
 }
 ```
 
-运行服务器
+默认端口`3500`，修改请在 **app.js** 文件中
+
+```js
+app.listen(3500)
+```
+
+### 手动运行
 
 ```bash
 mpm start
+```
+
+### 使用 Docker Compose
+
+可以一同部署 mongodb 数据库和后端
+
+修改 **docker-compose.yml** 中数据库的用户名和密码，也可以修改后端的端口映射
+
+```yml
+mongo:
+  environment:
+    MONGO_INITDB_ROOT_USERNAME: <username>
+    MONGO_INITDB_ROOT_PASSWORD: <password>
+node:
+  ports:
+    - "3500:3500"
+```
+
+```bash
+docker-compose up -d
 ```
 
 ## 🔍 API
