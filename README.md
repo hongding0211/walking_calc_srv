@@ -55,13 +55,13 @@ Body 参数 (multipart/form-data)
 
 | 参数名 | 必填 | 备注 |
 | ------ | ---- | ---- |
-| uid    | ✅    |      |
+| uid    | ✅    | string |
 
 ### `get` /getUserAvatar
 
 | 参数名 | 必填 | 备注 |
 | ------ | ---- | ---- |
-| uid    | ✅    |      |
+| uid    | ✅    | string |
 
 ### `get` /getUsers
 
