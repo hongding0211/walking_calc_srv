@@ -17,7 +17,7 @@
 ```js
 class DataBase {
   static connectionStr = 'mongodb://localhost'
-  static dbName = 'walking_calc'		// 需要自己创建数据库
+  static dbName = 'walking_calc'
   ...
 }
 ```
