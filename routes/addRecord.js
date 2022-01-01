@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const ResponseData = require('../module/ResponseData');
-const DataBase = require('../module/DataBase')
+const ResponseData = require('../module/responseData');
+const DataBase = require('../module/dataBase')
 const SHAjs = require('sha.js')
 
 /* Add a record */

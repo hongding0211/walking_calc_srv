@@ -5,19 +5,21 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser')
 const indexRouter = require('./routes/index');
-const login = require('./routes/Login');
-const register = require('./routes/Register')
-const getUserAvatar = require('./routes/GetUserAvatar')
-const createGroup = require('./routes/CreateGroup')
-const joinGroup = require('./routes/JoinGroup')
-const getGroups = require('./routes/GetData')
-const addRecord = require('./routes/AddRecord')
-const dissmissGroup = require('./routes/DismissGroup')
-const deleteRecord = require('./routes/DeleteRecord')
-const modifyRecord = require('./routes/ModifyRecord')
-const getUsers = require('./routes/GetUsers')
+const login = require('./routes/login');
+const register = require('./routes/register')
+const getUserAvatar = require('./routes/getUserAvatar')
+const createGroup = require('./routes/createGroup')
+const joinGroup = require('./routes/joinGroup')
+const getGroups = require('./routes/getData')
+const addRecord = require('./routes/addRecord')
+const dissmissGroup = require('./routes/dismissGroup')
+const deleteRecord = require('./routes/deleteRecord')
+const modifyRecord = require('./routes/modifyRecord')
+const getUsers = require('./routes/getUsers')
 
 const app = express();
+
+app.listen(3500)
 
 // CORS
 app.all('*', function (req, res, next) {
