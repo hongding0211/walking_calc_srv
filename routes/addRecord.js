@@ -6,7 +6,7 @@ const SHAjs = require('sha.js')
 
 /* Add a record */
 router.get('/', async (req, res) => {
-    let { groupID, who, paid, type, typeText, ...forWhom } = req.query
+    let {groupID, who, paid, type, typeText, long, lat, ...forWhom} = req.query
     forWhom = Object.values(forWhom)
 
     const db = new DataBase()
@@ -16,7 +16,12 @@ router.get('/', async (req, res) => {
     let time = Date.now()
     let recordID = ''
 
-    let group = await db.find('groups', { groupID }, { projection: { records: 0 } })
+    let location = null
+
+    if (!isNaN(long) && !isNaN(lat))
+        location = {long, lat}
+
+    let group = await db.find('groups', {groupID}, {projection: {records: 0}})
 
     if (group.length === 0) {
         result = 'group not exists'
@@ -32,7 +37,7 @@ router.get('/', async (req, res) => {
 
         // add record
         recordID = getTimeStr() + SHAjs('sha256').update(groupID + time).digest('hex').substring(0, 16)
-        await db.updateOne('groups', { groupID }, {
+        await db.updateOne('groups', {groupID}, {
             $push: {
                 records: {
                     time,
@@ -41,7 +46,8 @@ router.get('/', async (req, res) => {
                     paid,
                     type,
                     typeText,
-                    forWhom
+                    forWhom,
+                    location
                 }
             }
         })
