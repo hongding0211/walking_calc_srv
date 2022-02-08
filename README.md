@@ -2,11 +2,11 @@
 
 ## 📱 前端
 
-> https://github.com/HongDing97/walking_calc
+> https://github.com/hongding0211/walking_calc
 
 ## ⛏ 技术栈
 
-- Node.js 14 (16版本有一个库不兼容)
+- Node.js 14
 - Express
 - MongoDB
 
