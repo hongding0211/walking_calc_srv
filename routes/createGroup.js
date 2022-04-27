@@ -7,11 +7,10 @@ const SHAjs = require('sha.js')
 /* Create group */
 router.get('/', async (req, res) => {
     const db = new DataBase()
-    let {groupName, creator, ...members} = req.query
+    let {groupName, creator, isGameMode, ...members} = req.query
     members = Object.values(members)
     let result = 'fail'
     let groupID = ''
-
     // find first
     let membersQuery = []
     for (m of members)
@@ -39,6 +38,7 @@ router.get('/', async (req, res) => {
                 groupID,
                 groupName,
                 creator,
+                isGameMode,
                 members: [creator, ...members],
                 records: []
             }])
@@ -52,6 +52,7 @@ router.get('/', async (req, res) => {
         groupID,
         groupName,
         creator,
+        isGameMode,
         members,
     }, result))
 })
