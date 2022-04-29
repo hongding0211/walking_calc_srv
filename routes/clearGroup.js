@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const ResponseData = require('../module/ResponseData');
+const ResponseData = require('../module/responseData');
 const DataBase = require('../module/dataBase')
 
 /* Clear Group */
