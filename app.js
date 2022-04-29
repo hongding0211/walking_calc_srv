@@ -16,6 +16,7 @@ const dissmissGroup = require('./routes/dismissGroup')
 const deleteRecord = require('./routes/deleteRecord')
 const modifyRecord = require('./routes/modifyRecord')
 const getUsers = require('./routes/getUsers')
+const clearGroup = require('./routes/clearGroup')
 
 const app = express();
 
@@ -55,6 +56,7 @@ app.use('/dissmissGroup', dissmissGroup)
 app.use('/deleteRecord', deleteRecord)
 app.use('/modifyRecord', modifyRecord)
 app.use('/getUsers', getUsers)
+app.use('/clearGroup', clearGroup)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
