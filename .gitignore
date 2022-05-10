@@ -3,3 +3,5 @@ routes/template.js
 .idea
 
 cer
+
+*.log
