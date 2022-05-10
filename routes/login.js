@@ -14,7 +14,7 @@ log4js.configure({
                 pattern: '[%x{myTime}] [%p] %c - %m',                // using tokens
                 tokens: {
                     myTime: function (logEvent) {
-                        return new Date().toLocaleString('zh-CN')
+                        return new Date(Date.now()+8*60*60*1000).toLocaleString('zh-CN')
                     }
                 }
             }
